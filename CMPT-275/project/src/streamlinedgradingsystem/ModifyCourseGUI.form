@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+              <Component id="currentLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="newLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="instructionLbl" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+              <Component id="currentlyModTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="insertCourseNameTitle" pref="122" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="courseNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="backButton" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                              <Component id="startDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="courseNumField" alignment="0" pref="306" max="32767" attributes="0"/>
+                                  <Component id="startDateField" max="32767" attributes="0"/>
+                                  <Component id="courseNameField" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="courseNumLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="endDateLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="endDateField" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="newCourseNumLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="nextButton" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="newEndDateLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="newStartDateLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="newCourseNameLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="newCourseNameField" pref="283" max="32767" attributes="0"/>
+                          <Component id="newCourseNumField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="newStartDateField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="newEndDateField" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="currentlyModTitle" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="insertCourseNameTitle" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="newLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="currentLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="instructionLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="courseNameLbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="newCourseNameLbl" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="courseNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newCourseNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="courseNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newCourseNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="courseNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newCourseNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="startDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newStartDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="startDateField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newStartDateField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="endDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newEndDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="endDateField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="newEndDateField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="backButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="nextButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="newCourseNumField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseNumFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="currentlyModTitle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Currently Modifying:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="newCourseNameLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Name (eg. Intro Computing):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="newStartDateLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Start Date (YYYY-MM-DD):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="newEndDateLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="End Date (YYYY-MM-DD):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="courseNameLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="newCourseNameField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newCourseNameFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="newStartDateField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="currentLbl">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Current"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="newLbl">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="New"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="startDateLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Start Date:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="endDateLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="End Date:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="newEndDateField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="newCourseNumLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Number (eg. CMPT100):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="nextButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Next"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="instructionLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="(Blank fields will be left unchanged.)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="courseNumLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Number:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="courseNameField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseNameFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="courseNumField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseNumFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="startDateField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startDateFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="endDateField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endDateFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="insertCourseNameTitle">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="0" id="blue" palette="1" red="0" type="palette"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertCourseNameTitleActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,0 +1,32 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity pc is
+   port(     
+      din : in std_logic_vector(7 downto 0);
+      clp,lp,up,clk: in std_logic;
+      addr : out std_logic_vector(7 downto 0)
+   );
+
+end pc;
+
+architecture behav of pc is
+begin
+	process is
+	variable pc : std_logic_vector(7 downto 0);
+        begin
+        
+        if clk='1' then
+            if  clp = '1' then
+                pc := "00000000";
+            elsif up = '1' then
+                pc := pc + "00000001";
+            elsif lp = '1' then
+            	pc := din;
+            end if;
+        end if; 
+    addr <= pc;
+    wait on clk;
+    end process;
+end behav;

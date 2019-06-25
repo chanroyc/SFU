@@ -1,0 +1,33 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity ir is
+	port(clk, lir : in std_logic;
+		mout : in std_logic_vector(15 downto 0);
+		s,t,d : out std_logic_vector(1 downto 0);
+		opc : out std_logic_vector(3 downto 0);
+		din : out std_logic_vector(7 downto 0));                      
+end ir;
+
+architecture behav of ir is
+
+begin
+	process is
+	
+	variable inst : std_logic_vector(15 downto 0);
+	begin
+	if clk = '1' then
+		if lir ='1' then
+			inst := mout;
+		end if;
+		opc <= inst(15 downto 12);
+		s <= inst(11 downto 10);
+		d <= inst(11 downto 10);
+		t <= inst(9 downto 8);
+		din <= inst(7 downto 0);
+	end if;
+	wait on clk;
+	end process;
+end behav;

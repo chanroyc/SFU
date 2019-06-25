@@ -1,0 +1,12 @@
+roy@roy:~/Downloads/Lab4$ valgrind -q --leak-check=full ./a.out
+!!!Hello!!!
+Add 5,4,3,2,1 onto List1, so it is [1,2,3,4,5]
+List1=[1,2,3,4,5]
+Make List2 a copy of List1
+List2=[1,2,3,4,5]
+Remove the 3 from List1, and insert 9 at index 2 in List2.
+Now, List1=[1,2,4,5]
+and, List2=[1,2,9,3,4,5]
+
+
+!!!Goodbye!!!

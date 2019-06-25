@@ -1,0 +1,35 @@
+ul#menu{
+	float: right;
+	margin-top: -50px;
+	list-style-type: none;
+	padding: 0;
+	width: 200px;
+	background-color: #66c;
+	border-top: 3px solid #64a;
+	border-left: 20px solid #64a;
+	border-right: 3px solid #64a;
+	width: 120px;
+}
+
+ul#menu li{
+	border-bottom: 3px solid #64a;
+	padding: 2px;
+}
+
+ul#menu li a{
+	display: block;
+	color: white;
+	font-size: large;
+	margin-left: 5px;
+	text-decoration: none;
+}
+
+ul#menu li:hover{
+	text-decoration: underline;
+}
+
+ul#menu li a[href="five.html"]{
+	border-bottom: 0 solid white;
+	border-top: none;
+	
+}

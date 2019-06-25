@@ -1,0 +1,54 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity alu is
+	port(rs, rt: in std_logic_vector(15 downto 0);
+		sel : in std_logic_vector(2 downto 0);
+		c0 : in std_logic;
+		res : out std_logic_vector(15 downto 0);
+		lt, eq: out std_logic);
+		
+end alu;
+
+architecture behav of alu is
+begin
+   process is
+   variable d : std_logic_vector(15 downto 0);
+   variable diff : std_logic_vector(15 downto 0);
+   variable eq_val : std_logic;
+
+   begin
+      if sel = "000" then
+      	d := "000000000000000" & c0; 
+      elsif sel = "001" then
+      	d := rs + ("000000000000000" & c0);
+      elsif sel = "010" then
+      	d := rs + "1111111111111111";
+      elsif sel = "011" then
+      	d := rs + rt + ("000000000000000" & c0);
+      elsif sel = "100" then
+      	d := rs + (not rt) + ("000000000000000" & c0);
+      elsif sel = "101" then
+      	d := rs and rt;
+      elsif sel = "110" then
+      	d := (not rs) + ("000000000000000" & c0);
+      else                                      
+      	d := rt + ("000000000000000" & c0);
+      end if;
+      
+      diff := rs - rt;
+      res <= d after 10 ns;
+
+      if diff=X"0000" then
+      	eq_val := '1';
+      else
+      	eq_val:= '0';
+      end if;  
+      eq <= eq_val after 10 ns;
+      lt <= diff(15) after 10 ns;
+	  
+      wait on c0,sel,rs,rt;       
+
+   end process;
+end behav;

@@ -1,0 +1,79 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+use work.all;
+
+entity test_MPY8 is
+end test_MPY8;
+
+architecture test_bench of test_MPY8 is
+signal clk, mpy, rdy : std_logic;
+signal p : std_logic_vector(15 downto 0);
+signal a,b : std_logic_vector(7 downto 0);
+begin
+
+-- Component Instantiation:
+device:MPY8
+   port map( clk => clk, mpy => mpy, rdy => rdy, prod => p, a=> a, b=> b);
+   
+   process is
+         begin
+            mpy <= '1';
+            wait for 30 ns;
+            
+            mpy <= '0';
+            a <="00000100";
+            b <="00100111";
+            wait for 30 ns;
+            mpy <= '1';
+            wait until rdy='1';
+            wait for 50 ns;
+            
+            mpy <= '0';
+            a <="11111100";
+            b <="11111001";
+            wait for 30 ns;
+            mpy <= '1';
+            wait until rdy='1';
+            wait for 50 ns;
+           
+            mpy <= '0';
+            a <="01111111";
+            b <="01111111";
+            wait for 30 ns;
+            mpy <= '1';
+            wait until rdy='1';
+            wait for 50 ns;
+            
+            mpy <= '0';
+            a <="00000100";
+            b <="11111001";
+            wait for 30 ns;
+            mpy <= '1';
+            wait until rdy='1';
+            wait for 50 ns;
+            
+            mpy <= '0';
+            a <="00000100";
+            b <="00000000";
+            wait for 30 ns;
+            mpy <= '1';
+            wait until rdy='1';
+            wait for 50 ns;
+            mpy <= '0';
+            a <="10000000";
+            b <="10000000";
+            wait for 30 ns;
+            mpy <= '1';
+           wait;
+         end process;
+
+	process is
+	begin
+	   clk <= '0', '1' after 20 ns;
+	   wait for 40 ns;
+	end process;
+	
+end test_bench;        

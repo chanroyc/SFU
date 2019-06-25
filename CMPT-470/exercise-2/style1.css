@@ -1,0 +1,41 @@
+body{
+	background-color: #228;
+}
+
+h1{
+	display: block;
+	text-align: center;
+	background-color: white;
+}
+
+ul#menu {
+	text-align: center;
+	background-color: #228;
+}
+
+ul#menu li {
+	display: inline;
+	margin-right: 50px;
+	margin-bottom: 0px;
+}
+ul#menu li a{
+	padding: 8px;
+	background-color: #bbb;
+	text-align: center;
+	color: black;
+}
+
+ul#menu li a:hover{
+	background-color: white;
+	color: black;
+}
+
+div#main{
+	background-color: white;
+	position: absolute;
+	top: 105px;
+}
+
+ul#menu li.current a{
+	background-color: white;
+}

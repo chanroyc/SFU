@@ -1,0 +1,124 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity MPY8 is
+   port(     
+      clk : in std_logic;
+      mpy : in std_logic;
+      a , b : in std_logic_vector (7 downto 0);
+      prod : out std_logic_vector (15 downto 0);
+      rdy : out std_logic);
+
+end MPY8;
+
+architecture behav of MPY8 is
+type  state  is (WT, S1, S2, S3, S4, S5, S6, S7); 
+signal new_state : state;  
+signal P : std_logic_vector(17 downto 0);
+signal done : boolean;
+--signal clk :std_logic;
+
+begin
+   -- state transition process:
+   process is
+   variable curr_state: state := S7; 
+   begin
+      if clk = '1' then
+         case curr_state is
+            when WT =>
+               if mpy = '1' then
+               		curr_state := S1;
+               end if;
+            when S1 =>
+               if P(2 downto 0)="000" or P(2 downto 0)="111" then
+               		curr_state := S6;
+               elsif P(2 downto 0)="001" or P(2 downto 0)="010" then
+               		curr_state := S2;
+               elsif P(2 downto 0)="010" then
+               		curr_state := S2;
+               elsif P(2 downto 0)="011" then
+               		curr_state := S3;
+               elsif P(2 downto 0)="100" then
+               		curr_state := S4;
+               elsif P(2 downto 0)="101" or P(2 downto 0)="110" then
+               		curr_state := S5;
+               end if;
+            when S2 =>
+            	curr_state := S6;
+            when S3 =>
+            	curr_state := S6;
+            when S4 =>
+            	curr_state := S6;
+            when S5 =>
+            	curr_state := S6;
+            when S6 =>
+            	if done then
+            		curr_state := S7;
+            	else
+            		curr_state := S1;
+            	end if;
+            when S7 =>
+            	if mpy = '0' then
+            		curr_state := WT;
+            	end if;
+         end case;
+      end if;
+      new_state <= curr_state;
+      wait on clk;
+   end process;
+   
+   -- Asserted Outputs Process:
+   process is
+   variable p_val: std_logic_vector (17 downto 0);
+   variable prod_val: std_logic_vector (15 downto 0);
+   variable m, NegM: std_logic_vector(8 downto 0);
+   variable rdy_val : std_logic;
+   variable done_val : boolean;
+   variable I : integer;
+   
+   begin
+   	  rdy_val := '0';
+      case new_state is
+         when WT =>
+         	p_val(17 downto 9) :="000000000";
+         	p_val(8 downto 1) := signed(a);
+         	p_val(0) := '0';
+         	m(8 downto 0) := signed(b(7)&b(7 downto 0));
+         	NegM := not(m)+"000000001";
+         	I := 0;
+         	prod_val := "ZZZZZZZZZZZZZZZZ";
+         	rdy_val := '1';
+         when S1 =>
+         	I := I+1;
+         	done_val := not(I<4);
+		 when S2 =>
+		 	p_val(17 downto 9) := p_val(17 downto 9)+ m(8 downto 0);
+		 when S3 =>
+		 	p_val(17 downto 9) := p_val(17 downto 9)+ (m(8 downto 0) sll 1);
+		 when S4 =>
+		 	p_val(17 downto 9) := p_val(17 downto 9)+ (NegM(8 downto 0) sll 1);
+		 when S5 =>
+		 	p_val(17 downto 9) := p_val(17 downto 9)+ NegM(8 downto 0);
+		 when S6 =>
+		 	p_val := p_val sra 2;
+         when S7 =>
+            prod_val := p_val(16 downto 1);
+            rdy_val := '1';
+      -- assigned output values go here.
+      end case;
+      prod <= prod_val;
+      rdy <= rdy_val;
+      done <= done_val;
+      P <= p_val;
+      wait on new_state;  -- sensitivity list to restart process
+   end process;
+   
+   -- 20 ns Clock
+   --process is
+   --begin
+   --clk <= '0', '1' after 5 ns;
+   --		wait for 15 ns;
+   --end process;
+   
+end behav;

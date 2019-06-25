@@ -1,0 +1,102 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity SEQ is
+   port(     
+      eq,clk,stb : in std_logic;
+      opc : in std_logic_vector(3 downto 0);
+      state : out std_logic_vector (3 downto 0)
+      );
+
+end SEQ;
+
+architecture behav of SEQ is
+type  stateA  is (S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11); 
+signal new_state : stateA;  
+begin
+   -- state transition process:
+   process is
+   variable curr_state: stateA := S0; 
+   variable eq_val : std_logic;
+   variable next_state : std_logic_vector(3 downto 0):="0000";
+   begin
+      if clk = '1' then
+         case curr_state is
+            when S0 =>
+               next_state := "0000";
+               if stb = '1' then
+               		curr_state := S1;
+               		next_state := "0001";
+               end if;
+            when S1 =>
+            	curr_state := S2;
+            	next_state := "0010";
+            when S2 =>
+            	curr_state := S3;
+            	next_state := "0011";
+            when S3 =>
+                if opc="0000" then
+                   	curr_state := S0;
+                   	next_state := "0000";
+            	elsif opc="0001" then
+            		curr_state := S4;
+               		next_state := "0100";
+               	elsif opc="0010" then
+               		curr_state := S5;
+               		next_state := "0101";
+               	elsif opc="0011" then
+               		curr_state := S6;
+               		next_state := "0110";
+               	elsif opc="0100" then
+               		curr_state := S7;
+               		next_state := "0111";
+               	elsif opc="0101" then
+               		curr_state := S8;
+               		next_state := "1000";
+               	elsif opc="0110" then
+               		curr_state := S9;
+               		next_state := "1001";
+               	elsif opc="0111" then
+               		curr_state := S10;
+               		next_state := "1010";
+               	
+               end if;
+            when S4 =>
+            	curr_state := S1;
+            	next_state := "0001";
+            when S5 =>
+            	curr_state := S1;
+            	next_state := "0001";
+            when S6 =>
+            	curr_state := S1;
+            	next_state := "0001";
+            when S7 =>         
+            	curr_state := S1;
+            	next_state := "0001";
+            when S8 =>
+            	if eq='1' then
+            		curr_state := S11;
+            		next_state := "1011";
+            	elsif eq='0' then
+            		curr_state := S1;
+            		next_state := "0001";
+            	end if;
+            when S9 =>           
+            	curr_state := S1;
+            	next_state := "0001";
+            when S10 =>
+            	if stb='1' then 
+            		curr_state := S1;
+            		next_state := "0001";
+            	end if;
+            when S11 =>            
+            	curr_state := S1;
+            	next_state := "0001";
+         end case;
+      end if;
+      new_state <= curr_state;
+      state <= next_state;
+      wait on clk;
+   end process;
+end behav;

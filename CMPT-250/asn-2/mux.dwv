@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity mux is
+   port(     
+      din : in std_logic_vector(7 downto 0);
+      res : in std_logic_vector(15 downto 0);
+      s0 : in std_logic;
+      rd : out std_logic_vector(15 downto 0));
+
+end mux;
+
+architecture behav of mux is
+type memory is array (0 to 15) of std_logic_vector(7 downto 0);
+begin
+	process is
+	begin            
+		if s0 = '0' then
+			rd <= din(7)&din(7)&din(7)&din(7)&din(7)&din(7)&din(7)&din(7)&din(7 downto 0);
+		else
+			rd <= res;
+		end if; 
+	
+	wait on s0,din,res;
+
+	end process;
+end behav;

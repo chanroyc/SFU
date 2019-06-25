@@ -1,0 +1,21 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity a is
+	port(a0, a1 : in std_logic;
+		s, d : out std_logic_vector(1 downto 0)
+		);
+end a;
+
+architecture behav of a is
+begin
+	process is
+	begin
+	
+	s <= a1&a0;
+	d <= a1&a0;
+	wait on a0,a1;
+	end process;
+	
+end behav;

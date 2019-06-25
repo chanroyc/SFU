@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity cpe is
+	port(opc : in std_logic_vector(3 downto 0);
+		stb : in std_logic;
+		sel : out std_logic_vector(2 downto 0);
+		c0,lr,s0 : out std_logic
+	);                      
+end cpe;
+
+architecture behav of cpe is
+type memory is array (0 to 7) of std_logic_vector(7 downto 0);
+begin
+	process is
+		variable ROM : memory;
+		variable sel_val : std_logic_vector(2 downto 0);
+		variable opc_val : natural;
+		variable temp : std_logic_vector(7 downto 0);
+		begin
+	if stb ='1' then
+		opc_val := to_integer(opc);
+		-- ROM memory contents:
+		ROM(0) := "00000000";
+		ROM(1) := "00110011";
+		ROM(2) := "00111100";
+		ROM(3) := "00111001";
+		ROM(4) := "00110010";
+		ROM(5) := "00000101";
+		ROM(6) := "00010000";
+		ROM(7) := "00000000";
+		temp := ROM(opc_val);
+		c0 <= temp(3);
+		lr <= temp(4);
+		lr <= '0' after 25 ns;
+		s0 <= temp(5);
+		sel <= temp(2 downto 0);
+	
+	end if;	
+	wait on stb,opc;
+	end process;
+end behav;

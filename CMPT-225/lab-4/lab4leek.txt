@@ -1,0 +1,18 @@
+roy@roy:~/Downloads/Lab4$ valgrind -q --leak-check=full ./a.out
+!!!Hello!!!
+Add 5,4,3,2,1 onto List1, so it is [1,2,3,4,5]
+List1=[1,2,3,4,5]
+Make List2 a copy of List1
+List2=[1,2,3,4,5]
+Remove the 3 from List1, and insert 9 at index 2 in List2.
+Now, List1=[1,2,9,4,5]
+and, List2=[1,2,9,4,5]
+
+
+!!!Goodbye!!!
+==9796== 80 (16 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+==9796==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9796==    by 0x400A00: LinkedList::add(int) (in /home/roy/Downloads/Lab4/a.out)
+==9796==    by 0x400D74: listTest() (in /home/roy/Downloads/Lab4/a.out)
+==9796==    by 0x400CE7: main (in /home/roy/Downloads/Lab4/a.out)
+==9796== 

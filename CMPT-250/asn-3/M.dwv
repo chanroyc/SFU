@@ -1,0 +1,42 @@
+library IEEE;
+
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity M is
+   port(cs, r : in std_logic;
+        addr : in std_logic_vector(7 downto 0);
+        mout : out std_logic_vector(15 downto 0));
+end M;
+
+architecture behav of M is
+type memory is array(0 to 255) of std_logic_vector(15 downto 0);
+begin
+   process is
+   variable MEM : memory;
+   variable locn : natural;
+   begin
+      -- Store your program here:
+      MEM(0):= X"6002";
+      MEM(1):= X"6405";
+      MEM(2):= X"6800";
+      MEM(3):= X"6C00";
+      MEM(4):= X"5405";
+      MEM(5):= X"1900";
+      MEM(6):= X"4000";
+      MEM(7):= X"5405";
+      MEM(8):= X"1900";
+      MEM(9):= X"4000";
+      MEM(10):= X"5B00";
+      MEM(11):= X"7800";
+      MEM(12):= X"0000";
+      MEM(13):= X"0000";
+      MEM(14):= X"0000";
+      MEM(15):= X"0000";
+      -- End of program
+
+      locn := to_integer(addr);
+      mout <= MEM(locn);
+      wait on cs;
+   end process;
+end behav;
